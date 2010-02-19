@@ -1,0 +1,19 @@
+<h1>Editing Daily specials</h1>
+
+<% form_for(@special) do |f| %>
+  <%= f.error_messages %>
+
+  <% for i in Special::DAYS %>
+    <% counter = "counter_" + i %>
+    <p>
+    <%= f.label i %><span id="<%= counter %>"><%= Special::MAX_CHARS - (eval("@special.#{i}.length") rescue 0) -%></span> chars left<br />
+    <%= f.text_area i, :rows => 5, :cols => 40, :onkeyup => "$('#{counter}').update([#{Special::MAX_CHARS} - this.value.strip().length, 0].max())" %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @special %> |
+<%= link_to 'Back', specials_path %>

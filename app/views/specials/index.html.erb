@@ -1,0 +1,32 @@
+<h1>Listing specials</h1>
+
+<table>
+  <tr>
+    <th>Sunday</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+  </tr>
+
+<% @specials.each do |special| %>
+  <tr>
+    <td><%=h special.sunday %></td>
+    <td><%=h special.monday %></td>
+    <td><%=h special.tuesday %></td>
+    <td><%=h special.wednesday %></td>
+    <td><%=h special.thursday %></td>
+    <td><%=h special.friday %></td>
+    <td><%=h special.saturday %></td>
+    <td><%= link_to 'Show', special %></td>
+    <td><%= link_to 'Edit', edit_special_path(special) %></td>
+    <td><%= link_to 'Destroy', special, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New special', new_special_path %>
