@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Keyword</th>
     <th>Sunday</th>
     <th>Monday</th>
     <th>Tuesday</th>
@@ -13,6 +14,7 @@
 
 <% @specials.each do |special| %>
   <tr>
+    <td><%=h special.keyword %></td>
     <td><%=h special.sunday %></td>
     <td><%=h special.monday %></td>
     <td><%=h special.tuesday %></td>

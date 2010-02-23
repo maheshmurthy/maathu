@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100219164249) do
+ActiveRecord::Schema.define(:version => 20100223031238) do
 
   create_table "specials", :force => true do |t|
     t.text     "sunday"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20100219164249) do
     t.text     "saturday"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "keyword"
   end
 
 end

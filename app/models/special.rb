@@ -1,4 +1,7 @@
 class Special < ActiveRecord::Base
+  validates_uniqueness_of :keyword
+  validates_presence_of :keyword
+
   MAX_CHARS = 140
   DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
   validates_length_of :sunday, :maximum => 140

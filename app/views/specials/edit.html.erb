@@ -3,6 +3,10 @@
 <% form_for(@special) do |f| %>
   <%= f.error_messages %>
 
+  <p>
+    <%= f.label :keyword %>
+    <%= f.text_field :keyword %>
+  </p>
   <% for i in Special::DAYS %>
     <% counter = "counter_" + i %>
     <p>
