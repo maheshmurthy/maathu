@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <%= stylesheet_link_tag "style", :media => "all" %>
+  <%= javascript_include_tag :all %>
+  <script>
+  setTimeout("new Effect.Fade('notice');", 5000)
+  </script>
+</head>
+<body>
+  <div id="header">
+    <div id="logo"></div>
+    <div id="user-nav">
+      <%= link_to "Home", root_url %>
+      <%= link_to "About", root_url %> 
+      <%= link_to "Feedback", root_url %>
+      <% if current_user %>
+        <span class="info-message" style="font-size: 16px;">Howdy <%= current_user.username %>!</span>
+        <%= link_to "Logout", logout_path  %> 
+      <% else %>
+        <%= link_to "Signup", signup_path %>
+        <%= link_to "Login", login_path %> 
+      <% end %>
+      <%= link_to "Pricing", root_url %> 
+    </div>
+  </div>
+
+  <div id="page-container">
+       <%= yield %>
+  </div>
+  <div id="footer"></div>
+</body>
+</html>

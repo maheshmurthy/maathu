@@ -1,0 +1,11 @@
+<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+  <%= flash[:warning] || flash[:notice] %>
+</div>
+Please enter your email id to begin the password reset process
+<% form_tag password_resets_path do %>
+  <p>
+    <%= label_tag :email %><br />
+    <%= text_field_tag "email" %><br />
+  </p>
+  <%= submit_tag "Reset my password" %>
+<% end %>
