@@ -28,10 +28,14 @@ html, body {
 
 #logo {
   float: left;
-  background-image: url("../images/logo2.png");
+  background-image: url("../images/logo3.png");
   height: 170px;
-  width: 145px;
+  width: 325px;
   background-repeat: no-repeat;
+  color: white;
+  padding-top: 91px;
+  padding-left: 151px;
+  font-size: 30px;
 }
 
 #user-nav {
@@ -43,6 +47,17 @@ html, body {
   font-family: cursive;
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+#int-container {
+  background-color: #E4E9F9;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.label-text {
+  font-family: cursive;
+  color: #5B5E68;
 }
 
 .vertical-list a:link, .vertical-list a:visited {
