@@ -1,9 +1,11 @@
-<h1>Daily Specials</h1>
+<div class="heading">Create New Special</div>
 
 <% form_for(@special) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :keyword %>
+  <%= f.label :keyword, :keyword, :class => "label-text" %>
+  <span class="label-text">(When your customers text this keyword, they get back the below content depending on the day)</span>
+  <br />
     <%= f.text_field :keyword %>
   </p>
   <% for i in Special::DAYS %>
@@ -17,4 +19,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', specials_path %>
+<%= link_to 'Back', root_url %>

@@ -9,8 +9,8 @@ html, body {
     margin: auto;
     background-color: white;
     clear: both;
-    min-height: 100%;
     position: relative;
+    height: auto;
 }
 
 #user-nav a:link, #user-nav a:visited {
@@ -26,11 +26,16 @@ html, body {
   margin: auto;
 }
 
+#footer, #push {
+  height: 4em;
+  margin: auto;
+}
+
 #logo {
   float: left;
   background-image: url("../images/logo3.png");
-  height: 170px;
-  width: 325px;
+  height: 85px;
+  width: 200px;
   background-repeat: no-repeat;
   color: white;
   padding-top: 91px;
@@ -84,3 +89,13 @@ html, body {
   text-align: center;
   width: 500px;
 }
+
+#features {
+  color: orange;
+  font-size: 16px;
+  padding-left: 160px;
+  font-weight: bold;
+  border-style: none;
+  list-style: none;
+  font-family: cursive;
+}                                                                                         
