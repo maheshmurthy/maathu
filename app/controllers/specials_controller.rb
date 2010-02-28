@@ -1,25 +1,5 @@
 class SpecialsController < ApplicationController
-  # GET /specials
-  # GET /specials.xml
-  def index
-    @specials = Special.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @specials }
-    end
-  end
-
-  # GET /specials/1
-  # GET /specials/1.xml
-  def show
-    @special = Special.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @special }
-    end
-  end
+  before_filter :require_user
 
   # GET /specials/new
   # GET /specials/new.xml
@@ -35,17 +15,21 @@ class SpecialsController < ApplicationController
   # GET /specials/1/edit
   def edit
     @special = Special.find(params[:id])
+    if @special.userid != current_user.id
+      redirect_to :root
+    end
   end
 
   # POST /specials
   # POST /specials.xml
   def create
     @special = Special.new(params[:special])
+    @special.userid = current_user.id
 
     respond_to do |format|
       if @special.save
         flash[:notice] = 'Special was successfully created.'
-        format.html { redirect_to(@special) }
+        format.html { redirect_to root_url }
         format.xml  { render :xml => @special, :status => :created, :location => @special }
       else
         format.html { render :action => "new" }
@@ -58,11 +42,14 @@ class SpecialsController < ApplicationController
   # PUT /specials/1.xml
   def update
     @special = Special.find(params[:id])
-
+    if @special.userid != current_user.id
+      redirect_to :root
+      return
+    end
     respond_to do |format|
       if @special.update_attributes(params[:special])
         flash[:notice] = 'Special was successfully updated.'
-        format.html { redirect_to(@special) }
+        format.html { redirect_to root_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -75,6 +62,10 @@ class SpecialsController < ApplicationController
   # DELETE /specials/1.xml
   def destroy
     @special = Special.find(params[:id])
+    if @special.userid != current_user.id
+      redirect_to :root
+      return
+    end
     @special.destroy
 
     respond_to do |format|

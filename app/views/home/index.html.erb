@@ -1,0 +1,14 @@
+
+<table>
+<% if @specials %>
+<h3>Daily specials</h3>
+  <% @specials.each do |special| %>
+    <tr>
+      <td><%= link_to special.keyword, edit_special_path(special) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Create New special', new_special_path %>
+<br />
+<% else %>
+<% end %>
