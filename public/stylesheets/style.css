@@ -5,7 +5,7 @@ html, body {
 }
 
 #page-container {
-    width: 1000px;
+    width: 900px;
     margin: auto;
     background-color: white;
     clear: both;
@@ -15,28 +15,47 @@ html, body {
 
 #user-nav a:link, #user-nav a:visited {
   text-decoration: none;
-  font-size: 22px;
+  font-size: 18px;
   margin-left: 10px;
-  color: #003399;
+  color: #003389;
+  font-family: cursive;
 }
 
 #header {
-  width: 1000px;
+  width: 900px;
   margin: auto;
 }
 
 #logo {
   float: left;
-  background-image: url("../images/logo.png");
-  height: 150px;
-  width: 125px;
+  background-image: url("../images/logo2.png");
+  height: 170px;
+  width: 145px;
   background-repeat: no-repeat;
 }
 
 #user-nav {
   margin-top: 30px;
   float: right;
-  font-size: 16px;
+}
+
+.heading {
+  font-family: cursive;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.vertical-list a:link, .vertical-list a:visited {
+  text-decoration: none;
+  color: #003389;
+}
+
+.vertical-list {
+  list-style: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #003389;
+  margin-left: 10px;
 }
 
 #notice {
