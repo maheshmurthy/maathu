@@ -1,22 +1,4 @@
 <div class="heading">Create New Special</div>
 
-<% form_for(@special) do |f| %>
-  <%= f.error_messages %>
-  <p>
-  <%= f.label :keyword, :keyword, :class => "label-text" %>
-  <span class="label-text">(When your customers text this keyword, they get back the below content depending on the day)</span>
-  <br />
-    <%= f.text_field :keyword %>
-  </p>
-  <% for i in Special::DAYS %>
-    <p>
-      <%= f.label i %><br />
-      <%= f.text_area i, :rows => 5, :cols => 40 %>
-    </p>
-  <% end %>
-  <p>
-    <%= f.submit 'Save' %>
-  </p>
-<% end %>
-
+<%= render :partial => 'special' %>
 <%= link_to 'Back', root_url %>

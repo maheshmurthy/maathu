@@ -1,4 +1,4 @@
 xml.instruct!
 xml.Response do
-  xml.Sms @special.sunday
+  xml.Sms @special
 end

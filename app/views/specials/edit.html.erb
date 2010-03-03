@@ -1,23 +1,5 @@
 <div class="heading">Editing Daily specials</div>
 
-<% form_for(@special) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :keyword %>
-    <%= f.text_field :keyword %>
-  </p>
-  <% for i in Special::DAYS %>
-    <% counter = "counter_" + i %>
-    <p>
-    <%= f.label i %><span id="<%= counter %>"><%= Special::MAX_CHARS - (eval("@special.#{i}.length") rescue 0) -%></span> chars left<br />
-    <%= f.text_area i, :rows => 3, :cols => 40, :onkeyup => "$('#{counter}').update([#{Special::MAX_CHARS} - this.value.strip().length, 0].max())" %>
-    </p>
-  <% end %>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
+<%= render :partial => 'special' %>
 <%= link_to 'Remove', @special, :confirm => 'Are you sure you want to remove this special?', :method => :delete %>
 <%= link_to 'Back', root_url %>
