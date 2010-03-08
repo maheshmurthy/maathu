@@ -3,7 +3,8 @@ class SmsController < ApplicationController
   def index
     from = params[:From]
     message = params[:Body]
-    today = Date::DAYNAMES[DateTime.now.day].downcase
+    message = message.gsub(/\s/,'').downcase
+    today = Date::DAYNAMES[DateTime.now.day % 7].downcase
 
     day_special = Special.find_by_keyword(message)
     unless day_special
