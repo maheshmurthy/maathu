@@ -2,6 +2,7 @@ class Special < ActiveRecord::Base
   validates_uniqueness_of :keyword, :scope => [:phone]
   validates_presence_of :keyword
   belongs_to :user
+  belongs_to :bar
 
   MAX_CHARS = 140
   DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']

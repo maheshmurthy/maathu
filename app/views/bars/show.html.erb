@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @bar.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @bar.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_bar_path(@bar) %> |
+<%= link_to 'Back', bars_path %>
