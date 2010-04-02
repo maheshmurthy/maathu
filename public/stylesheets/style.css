@@ -99,3 +99,17 @@ html, body {
   list-style: none;
   font-family: cursive;
 }                                                                                         
+
+#barlist {
+  width: 700px;
+}
+
+#days {
+  width: 200px;
+  float: right;
+  text-align: right;
+}
+
+.special {
+  margin-bottom: 5px;
+}

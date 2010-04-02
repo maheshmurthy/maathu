@@ -1,34 +1,14 @@
-<style type="text/css">
-  .info {
-    color: #4064BF;
-    font-size: 30px;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    width: 800px;
-    text-align: center;
-  }
-</style>
-
-<% if @specials %>
-<div class="heading">Daily specials</div>
-  <% @specials.each do |special| %>
-      <li class="vertical-list"><%= link_to special.keyword, edit_special_path(special) %></li>
+<div id="days">
+  <% for day in Date::DAYNAMES %>
+    <div class="day">
+    <%= link_to day, day %>
+    </div>
   <% end %>
-<%= link_to 'Create New special', new_special_path %>
-<% else %>
-  <div class="info">Market daily food and drink specials easily through texting (SMS)</div>
-  <fieldset id="features">
-    <li>
-    Step 1: Signup for an account with us.
-    </li>
-    <li>
-    Step 2: Create a text keyword (ex: "bar123") and fill in your daily food and drink specials.
-    </li>
-    <li>
-    Step 3: When someone texts that keyword to the phone number, we text them back THE specials of that day.
-    </li>
-    <li>
-    Step 4: See your profit go up!
-    </li>
-  </fieldset>
+</div>
+<div id="barlist">
+<% @specials.each do |special| %>
+  <div class="special">
+  <%= special %>
+  </div>
 <% end %>
+</div>

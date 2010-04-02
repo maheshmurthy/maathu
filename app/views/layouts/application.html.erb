@@ -16,20 +16,17 @@
       <% end %>
       <%= link_to "Home", root_url %>
       <%= link_to "About", root_url %> 
-      <%= link_to "Feedback", root_url %>
       <% if current_user %>
         <%= link_to "Logout", logout_path  %> 
       <% else %>
         <%= link_to "Signup", signup_path %>
         <%= link_to "Login", login_path %> 
       <% end %>
-      <%= link_to "Pricing", root_url %> 
     </div>
   </div>
 
   <div id="page-container">
        <%= yield %>
-       <div id="push"></>
   </div>
   <div id="footer"></div>
 </body>
