@@ -26,65 +26,11 @@
   </div>
 </div>
 
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.sunday %>
-</span>
-<span class="day">Sunday</span>
-</div>
-<% end %>
-
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.monday %>
-</span>
-<span class="day">Monday</span>
-</div>
-<% end %>
-
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.tuesday %>
-</span>
-<span class="day">Tuesday</span>
-</div>
-<% end %>
-
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.wednesday %>
-</span>
-<span class="day">Wednesday</span>
-</div>
-<% end %>
-
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.thursday %>
-</span>
-<span class="day">Thursday</span>
-</div>
-<% end %>
-
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.friday %>
-</span>
-<span class="day">Friday</span>
-</div>
-<% end %>
-
-<% if @bar.special.sunday %>
-<div class="special-detail">
-<span class="special">
-<%= @bar.special.saturday %>
-</span>
-<span class="day">Saturday</span>
-</div>
+<% Date::DAYNAMES.each do |day|
+  if @bar.special.send(day.downcase.to_sym) %>
+    <div class="special-detail">
+      <span class="special"><%=  @bar.special.send(day.downcase.to_sym) %></span>
+      <span class="day"><%= day %></span>
+    </div>
+  <% end %>
 <% end %>
