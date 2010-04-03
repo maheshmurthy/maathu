@@ -1,11 +1,8 @@
 <div id="days">
   <% 
-    index = 0
     for day in Date::DAYNAMES %>
-
     <div class="day">
-      <%= link_to day, :controller => "specials", :action => "day", :id => index %>
-      <% index += 1 %>
+      <%= link_to day, :controller => "specials", :action => "day", :id => day.downcase %>
     </div>
   <% end %>
 </div>
