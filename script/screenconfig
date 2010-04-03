@@ -2,22 +2,15 @@
 
 screen -t 'Rails project root' 0
 
-# I like to have SVN running at the root of the whole project
-# (including specs, notes, etc. with source code changesets)
 chdir "app/models"
 screen -t MODELS 1
 
-
-# screen/stuff are separated so that when you exit the stuff-ed program,
-#  you drop back to the bash shell for that screen instead of immediately
-# exiting that screen. This is useful for "^c, up-arrow, enter" restarting of commands
 chdir "../../app/views"
 screen -t VIEWS 2
 
 chdir "../../app/controllers"
 screen -t CONTROLLERS 3
 
-#chdir "/Users/matt/dev/drinkapp/maathu/app/helpers"
 chdir "../../app/helpers"
 screen -t HELPERS 3
 
