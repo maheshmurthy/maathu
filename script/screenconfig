@@ -1,0 +1,18 @@
+#escape ^oo
+
+screen -t 'Rails project root' 0
+
+chdir "app/models"
+screen -t MODELS 1
+
+chdir "../../app/views"
+screen -t VIEWS 2
+
+chdir "../../app/controllers"
+screen -t CONTROLLERS 3
+
+chdir "../../app/helpers"
+screen -t HELPERS 3
+
+select 0
+
