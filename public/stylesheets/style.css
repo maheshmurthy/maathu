@@ -111,6 +111,10 @@ html, body {
   text-align: left;
 }
 
+.day {
+  margin-bottom: 5px;
+}
+
 .special {
   width: 720px;
   margin-bottom: 5px;
@@ -119,6 +123,7 @@ html, body {
 .special-name {
   float: right;
   width: 690px;
+  color: #2E2E2E;
 }
 
 .rank-index {
@@ -129,12 +134,13 @@ html, body {
 }
 
 .tag-link {
-  color: white;
-  background-color: #848484;
+  color: #424242;
+  background-color: #D8D8D8;
   font-size: 12px;
   text-decoration: none;
 }
 
-.tag-link a:hover {
-  background-color: red;
+#ranklist A:hover {
+  background-color: #424242;
+  color: white;
 }
