@@ -1,13 +1,90 @@
-<p>
-  <b>Name:</b>
-  <%=h @bar.name %>
-</p>
+<style>
+  #bar-details {
+    margin-bottom: 20px;
+  }
 
-<p>
-  <b>Address:</b>
-  <%=h @bar.address %>
-</p>
+  .special {
+    margin-left: 25px;
+    float: right;
+  }
 
+  .special-detail {
+    margin-bottom: 40px;
+  }
 
-<%= link_to 'Edit', edit_bar_path(@bar) %> |
-<%= link_to 'Back', bars_path %>
+  .day {
+    margin-right: 25px;
+  }
+
+</style>
+<div id="bar-details">
+  <div class="bar-name">
+    <%=h @bar.name %>
+  </div>
+  <div class="address">
+    <%=h @bar.address %>
+  </div>
+</div>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.sunday %>
+</span>
+<span class="day">Sunday</span>
+</div>
+<% end %>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.monday %>
+</span>
+<span class="day">Monday</span>
+</div>
+<% end %>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.tuesday %>
+</span>
+<span class="day">Tuesday</span>
+</div>
+<% end %>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.wednesday %>
+</span>
+<span class="day">Wednesday</span>
+</div>
+<% end %>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.thursday %>
+</span>
+<span class="day">Thursday</span>
+</div>
+<% end %>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.friday %>
+</span>
+<span class="day">Friday</span>
+</div>
+<% end %>
+
+<% if @bar.special.sunday %>
+<div class="special-detail">
+<span class="special">
+<%= @bar.special.saturday %>
+</span>
+<span class="day">Saturday</span>
+</div>
+<% end %>
