@@ -1,14 +1,20 @@
 <div id="days">
   <% for day in Date::DAYNAMES %>
     <div class="day">
-    <%= link_to day, day %>
+    <%= link_to day, day.downcase %>
     </div>
   <% end %>
 </div>
-<div id="barlist">
+<div id="ranklist">
+  <% index = 1 %>
 <% @specials.each do |special| %>
   <div class="special">
-  <%= special %>
+    <div class="special-name"> <%= special.saturday %></div>
+    <div class="rank-index"> <%= index %>.</div> 
+    <div class="specials-meta-info">
+      <%= link_to special.name, { :controller => "bars", :action => "show", :id => special.bar_id}, :class => "tag-link" %>
+    </div>
+    <% index += 1 %>
   </div>
 <% end %>
 </div>

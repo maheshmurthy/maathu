@@ -3,7 +3,6 @@ class HomeController < ApplicationController
   skip_before_filter :require_user
   protect_from_forgery :only => [:create, :update, :destroy]
   def index
-    # TODO Remove distinct for real site
-    @specials = Special.all(:select => "DISTINCT #{today}").map(&today.intern)
+    @specials = Special.all(:select => "#{today}, bar_id, name", :joins => :bar)
   end
 end

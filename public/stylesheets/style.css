@@ -100,16 +100,41 @@ html, body {
   font-family: cursive;
 }                                                                                         
 
-#barlist {
-  width: 700px;
+#ranklist {
+  width: 720px;
+  padding-left: 20px;
 }
 
 #days {
-  width: 200px;
+  width: 100px;
   float: right;
-  text-align: right;
+  text-align: left;
 }
 
 .special {
+  width: 720px;
   margin-bottom: 5px;
+}
+
+.special-name {
+  float: right;
+  width: 690px;
+}
+
+.rank-index {
+}
+
+.specials-meta-info {
+  margin-left: 30px;
+}
+
+.tag-link {
+  color: white;
+  background-color: #848484;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.tag-link a:hover {
+  background-color: red;
 }
