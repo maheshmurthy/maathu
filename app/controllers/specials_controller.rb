@@ -1,5 +1,13 @@
 class SpecialsController < ApplicationController
+  include TimeUtil
+  include SpecialsUtil
+
   before_filter :require_user
+
+  def day
+    day = getDay(params[:id].to_i)
+    @specials = getSpecialsOfDay(day)
+  end
 
   # GET /specials/new
   # GET /specials/new.xml

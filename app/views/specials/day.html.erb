@@ -1,24 +1,10 @@
-<div id="days">
-  <% 
-    index = 0
-    for day in Date::DAYNAMES %>
-
-    <div class="day">
-      <%= link_to day, :controller => "specials", :action => "day", :id => index %>
-      <% index += 1 %>
-    </div>
-  <% end %>
-</div>
 <div id="ranklist">
-  <% index = 1 %>
 <% @specials.each do |special| %>
   <div class="special">
     <div class="special-name"> <%= special.day_special %></div>
-    <div class="rank-index"> <%= index %>.</div> 
     <div class="specials-meta-info">
       <%= link_to special.name, { :controller => "bars", :action => "show", :id => special.bar_id}, :class => "tag-link" %>
     </div>
-    <% index += 1 %>
   </div>
 <% end %>
 </div>
