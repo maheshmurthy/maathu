@@ -1,0 +1,10 @@
+<% Date::DAYNAMES.each do |day| %>
+    <div class="special-detail">
+      <p>
+      <span class="day"><%= day %></span>
+      </p>
+      <p>
+      <span class="special"><%=  f.text_area day.downcase.to_sym, :rows => 3, :cols => 40 %></span>
+      </p>
+    </div>
+<% end %>

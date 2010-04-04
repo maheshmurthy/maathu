@@ -11,6 +11,9 @@
     <%= f.label :address %><br />
     <%= f.text_field :address %>
   </p>
+  <% f.fields_for :special do |builder| %>
+    <%= render "special_fields", :f => builder %>
+  <% end %>
   <p>
     <%= f.submit 'Create' %>
   </p>

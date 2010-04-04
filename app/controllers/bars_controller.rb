@@ -25,6 +25,7 @@ class BarsController < ApplicationController
   # GET /bars/new.xml
   def new
     @bar = Bar.new
+    @special = Special.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +41,8 @@ class BarsController < ApplicationController
   # POST /bars
   # POST /bars.xml
   def create
-    @bar = Bar.new(params[:bar])
+    @bar = Bar.new(:name => params[:bar][:name], :address => params[:bar][:address])
+    @bar.special = Special.new(params[:bar][:special])
 
     respond_to do |format|
       if @bar.save
@@ -58,9 +60,11 @@ class BarsController < ApplicationController
   # PUT /bars/1.xml
   def update
     @bar = Bar.find(params[:id])
+    @bar.special.attributes = params[:bar][:special]
+    @bar.attributes =  { :name => params[:bar][:name], :address => params[:bar][:address] }
 
     respond_to do |format|
-      if @bar.update_attributes(params[:bar])
+      if @bar.save && @bar.special.save
         flash[:notice] = 'Bar was successfully updated.'
         format.html { redirect_to(@bar) }
         format.xml  { head :ok }
