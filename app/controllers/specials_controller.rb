@@ -79,4 +79,10 @@ class SpecialsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def upvote
+    @special = Special.find(params[:id])
+    @special.upvote += 1
+    @special.save
+  end
 end
