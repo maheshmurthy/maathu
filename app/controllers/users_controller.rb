@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :only => [:new_user, :add_new_user, :manage_users]
+  before_filter :require_user, :only => [:destroy]
   # GET /users
   # GET /users.xml
   def index
@@ -69,11 +69,5 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
-  end
-
-  private
-  def random_password(len)
-    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-    return Array.new(10){||chars[rand(chars.size)]}.join
   end
 end

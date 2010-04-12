@@ -1,9 +1,12 @@
 class BarsController < ApplicationController
+
+  before_filter :require_user, :only => [:edit]
+  before_filter :require_admin_credentials, :only => [:new]
+
   # GET /bars
   # GET /bars.xml
   def index
     @bars = Bar.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bars }
@@ -14,7 +17,6 @@ class BarsController < ApplicationController
   # GET /bars/1.xml
   def show
     @bar = Bar.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @bar }
@@ -36,6 +38,12 @@ class BarsController < ApplicationController
   # GET /bars/1/edit
   def edit
     @bar = Bar.find(params[:id])
+    # Make sure the bar belongs to the signed in user
+    if(@bar.user_id != current_user_session.user.id && !is_admin)
+      flash[:notice] = "You don't have the credentials to view this page"
+      redirect_to root_url
+      return
+    end
   end
 
   # POST /bars
