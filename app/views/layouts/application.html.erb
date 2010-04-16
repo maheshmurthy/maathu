@@ -6,8 +6,15 @@
   <script>
   setTimeout("new Effect.Fade('notice');", 5000)
   </script>
+  <!--[if  IE 8]>
+    <style type="text/css">
+      #wrap {display:table;}
+    </style>
+  <![endif]-->
+
 </head>
 <body>
+  <div id="wrap">
   <div id="header">
     <div id="logo">Maathu</div>
     <div id="user-nav">
@@ -28,6 +35,7 @@
   <div id="page-container">
        <%= yield %>
   </div>
-  <div id="footer"></div>
+  </div>
+  <div id="footer">All rights reserved</div>
 </body>
 </html>
