@@ -30,7 +30,7 @@ class BarsController < ApplicationController
     @special = Special.new
     Date::DAYNAMES.each do |day|
       daily_special = @bar.daily_specials.build
-      daily_special.day = day
+      daily_special.day = day.downcase
     end
 
     respond_to do |format|

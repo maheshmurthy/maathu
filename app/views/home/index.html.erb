@@ -9,10 +9,10 @@
 <div id="ranklist">
 <% @specials.each do |special| %>
   <div class="special">
-    <div class="special-name"> <%= special.day_special %></div>
+    <div class="special-name"> <%= special.content %></div>
     <div class="rank"> <%= link_to_remote 'U', :url => {:controller => "specials", :action => "upvote", :id => special.id} %></div> 
     <div class="specials-meta-info">
-      <%= link_to special.name, { :controller => "bars", :action => "show", :id => special.bar_id}, :class => "tag-link" %>
+      <%= link_to special.bar.name, { :controller => "bars", :action => "show", :id => special.bar_id}, :class => "tag-link" %>
     </div>
   </div>
 <% end %>
