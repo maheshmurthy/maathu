@@ -1,4 +1,5 @@
 class Bar < ActiveRecord::Base
-  has_one :special
   belongs_to :user
+  has_many :daily_specials
+  accepts_nested_attributes_for :daily_specials
 end
