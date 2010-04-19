@@ -26,11 +26,10 @@
   </div>
 </div>
 
-<% Date::DAYNAMES.each do |day|
-  if @bar.special.send(day.downcase.to_sym) %>
+<% 
+  @bar.daily_specials.each do |special| %>
     <div class="special-detail">
-      <span class="special"><%=  @bar.special.send(day.downcase.to_sym) %></span>
-      <span class="day"><%= day %></span>
+      <span class="special"><%=  special.content %></span>
+      <span class="day"><%= special.day %></span>
     </div>
   <% end %>
-<% end %>

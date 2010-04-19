@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100419023733) do
+ActiveRecord::Schema.define(:version => 20100419124824) do
 
   create_table "bars", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20100419023733) do
 
   create_table "daily_specials", :force => true do |t|
     t.string   "day"
-    t.integer  "votes"
+    t.integer  "votes",      :default => 0
     t.integer  "bar_id"
     t.datetime "created_at"
     t.datetime "updated_at"

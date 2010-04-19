@@ -59,16 +59,16 @@ class BarsController < ApplicationController
 #    @bar = Bar.new(:name => params[:bar][:name], :address => params[:bar][:address])
 #    @bar.special = Special.new(params[:bar][:special])
 
-#    respond_to do |format|
-#      if @bar.save
-#        flash[:notice] = 'Bar was successfully created.'
-#        format.html { redirect_to(@bar) }
-#        format.xml  { render :xml => @bar, :status => :created, :location => @bar }
-#      else
-#        format.html { render :action => "new" }
-#        format.xml  { render :xml => @bar.errors, :status => :unprocessable_entity }
-#      end
-#    end
+    respond_to do |format|
+      if @bar.save
+        flash[:notice] = 'Bar was successfully created.'
+        format.html { redirect_to(@bar) }
+        format.xml  { render :xml => @bar, :status => :created, :location => @bar }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @bar.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 
   # PUT /bars/1
